@@ -1,0 +1,7 @@
+node_modules
+coverage
+jest.config.js
+**/*.spec.ts
+
+*.json
+*.ts
