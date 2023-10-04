@@ -1,10 +1,11 @@
 import axios from 'axios'
+
 export const mockAxios = (): jest.Mocked<typeof axios> => {
-    const mockedAxios = axios as jest.Mocked<typeof axios>
+     const mockedAxios = axios as jest.Mocked<typeof axios>
     mockedAxios.post.mockResolvedValue({
-        data: 'eu-sou-natan',
+        data: 'someBody',
         status: 23
 
     })
-    return mockAxios as any
+    return mockedAxios as any
 }
