@@ -2,6 +2,7 @@ node_modules
 coverage
 jest.config.js
 **/*.spec.ts
+public
 
 *.json
 *.ts
