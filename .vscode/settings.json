@@ -1,0 +1,18 @@
+{
+    "material-icon-theme.folders.associations": {
+        "infra": "Api",
+        "domain": "Class",
+        "presentetion": "React-components",
+        "main": "mappings",
+        "usecases": "Functions",
+
+        "sample": "dist"
+    },
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "material-icon-theme",
+    "files.autoSave": "afterDelay",
+    "explorer.compactFolders": false,
+    "workbench.settings.applyToAllProfiles": [
+        "editor.pasteAs.enabled"
+    ]
+}
