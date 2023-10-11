@@ -8,7 +8,7 @@ const Login: React.FC = () => {
             <LoginHeader />
             <form className={styles.form}>
                 <h2>Login</h2>
-                <Input type="password" name="" id="Digite sua senha" />
+                <Input type="email" name="" id="Digite sua email" />
                 <Input type="password" name="" id="Digite sua senha" />
                 <button className={styles.submit} type="submit">Entrar</button>
                 <span className={styles.link}>Criar conta</span>
