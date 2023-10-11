@@ -6,7 +6,7 @@
         "main": "mappings",
         "usecases": "Functions",
         "http": "Scala",
-
+        "protocols": "Secure",
         "sample": "dist"
     },
     "workbench.colorTheme": "Dracula",
