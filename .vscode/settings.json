@@ -5,6 +5,7 @@
         "presentetion": "React-components",
         "main": "mappings",
         "usecases": "Functions",
+        "http": "Scala",
 
         "sample": "dist"
     },

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './login-styles.scss'
+import Spinner from "@/presentetion/components/spinner/spinner";
 const Login: React.FC = () => {
     return (
         <div className={styles.login}>
@@ -19,6 +20,10 @@ const Login: React.FC = () => {
                 </div>
                 <button className={styles.submit} type="submit">Entrar</button>
                 <span className={styles.link}>Criar conta</span>
+                <div className={styles.errorWrap}>
+                    <Spinner className={styles.spinner}/>
+                    <span className={styles.error}>Error</span>
+                </div>
             </form>
             <footer className={styles.footer}></footer>
         </div>
