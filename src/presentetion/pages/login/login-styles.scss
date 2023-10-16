@@ -1,14 +1,12 @@
 @import "../../styles/colors.scss";
 
-
-
 .login {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
- 
+
 
     .form {
         display: flex;
@@ -27,24 +25,32 @@
             text-transform: uppercase;
         }
 
-        
-        .submit{
+        .submit {
             margin-top: 32px;
+
+            &:disabled {
+                background-color: $disabledBackground;
+                color: $disabledColor;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
         }
 
-        .link{
+        .link {
             text-align: center;
             color: $primary;
             text-transform: lowercase;
             margin-top: 16px;
             cursor: pointer;
 
-            &:hover{
-             text-decoration: underline;
+            &:hover {
+                text-decoration: underline;
             }
         }
-       
+
     }
 
-    
+
 }
