@@ -9,6 +9,7 @@
    "keywords": [],
    "description": "",
    "devDependencies": {
+      "@testing-library/react": "^14.0.0",
       "@types/axios": "^0.14.0",
       "@types/faker": "^6.6.9",
       "@types/jest": "^29.5.5",
