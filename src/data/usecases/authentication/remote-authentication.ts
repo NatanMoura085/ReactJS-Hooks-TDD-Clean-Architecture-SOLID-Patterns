@@ -4,6 +4,7 @@ import { UnexpecError, InvalidCredentialsError } from "@/domain/errors";
 import { AccountModel } from "@/domain/models";
 
 export class RemoteAuthentication implements Authentication {
+    private ano:string
     constructor(private readonly url: string,
         private readonly httPostClient: httPostClient<AuthenticationParams, AccountModel>
     ) { }
