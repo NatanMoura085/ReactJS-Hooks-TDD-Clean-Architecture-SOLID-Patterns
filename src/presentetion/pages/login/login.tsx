@@ -7,9 +7,9 @@ import { Authentication } from "@/domain/usecases";
 
 type Props = {
     validation: ValidationStub
-    authentication:Authentication
+    authentication: Authentication
 }
-const Login: React.FC<Props> = ({ validation,authentication }: Props) => {
+const Login: React.FC<Props> = ({ validation, authentication }: Props) => {
     const [state, setState] = useState({
         isLoading: false,
         email: '',
@@ -20,23 +20,28 @@ const Login: React.FC<Props> = ({ validation,authentication }: Props) => {
 
     })
     useEffect(() => {
-       setState({
-        ...state,
-        emailError: validation?.validate( 'email', state.email ),
-        passwordError: validation?.validate( 'password', state.password )
-       })
-    }, [state.email,state.password])
-    
-    const handleSubmit =  async (event:React.FormEvent<HTMLFormElement>):Promise<void> =>{
+        setState({
+            ...state,
+            emailError: validation?.validate('email', state.email),
+            passwordError: validation?.validate('password', state.password)
+        })
+    }, [state.email, state.password])
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
         event.preventDefault()
-        setState({...state, isLoading:true})
-        await authentication.auth({email:state.email, password:state.password})
+        try {
+            if (state.isLoading || state.emailError || state.passwordError) { return }
+            setState({ ...state, isLoading: true })
+            await authentication.auth({ email: state.email, password: state.password })
+        } catch (error) {
+            setState({ ...state, isLoading: false, mainError:error.message })
+        }
     }
     return (
         <div className={styles.login}>
             <LoginHeader />
             <Context.Provider value={{ state, setState }}>
-                <form className={styles.form} onSubmit={handleSubmit}>
+                <form data-testid="form" className={styles.form} onSubmit={handleSubmit}>
                     <h2>Login</h2>
                     <Input type="email" name="email" id="Digite sua email" />
                     <Input type="password" name="password" id="Digite sua senha" />
